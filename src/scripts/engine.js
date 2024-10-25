@@ -16,6 +16,18 @@ const state ={
     },
 }
 
+function resetGame() {
+    state.values.curretTime = 60;
+    state.values.result = 0;
+    state.values.hitPosition = 0;
+
+    state.view.timeLeft.textContent = state.values.curretTime;
+    state.view.score.textContent = state.values.result;
+
+    state.actions.timerId = setInterval(randomSquare, 1000);
+    state.actions.countDownTimerId = setInterval(countDown, 1000);
+}
+
 function countDown(){
     state.values.curretTime--
     state.view.timeLeft.textContent = state.values.curretTime
@@ -23,7 +35,12 @@ function countDown(){
     if(state.values.curretTime <= 0){
         clearInterval(state.actions.countDownTimerId)
         clearInterval(state.actions.timerId)
-        alert("Game Over! O seu resultado foi: " + state.values.result)
+        if(state.values.result < 30){
+            alert("Game Over! O seu resultado foi: " + state.values.result)
+        }else{
+            alert("Vitória! O seu resultado foi: " + state.values.result)
+        }
+        resetGame()
     }
 }
 
