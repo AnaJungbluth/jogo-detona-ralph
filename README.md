@@ -11,7 +11,7 @@ Jogo simples onde o jogador deve clicar na **casa** em que o personagem Ralph ap
 - O jogador precisa clicar rapidamente no local correto para ganhar pontos.  
 - O jogo termina ao final dos 60 segundos.  
 - Contabiliza o número de acertos feitos dentro do tempo.
-- Se fizer mais que 30 pontos ganha, se não perder
+- Se o jogador fizer mais de 30 pontos, vence a partida; caso contrário, perde.
 
 ---
 
